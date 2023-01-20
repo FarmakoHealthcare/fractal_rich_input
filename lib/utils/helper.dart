@@ -98,7 +98,7 @@ class Helper {
               String startIdentifier =
                   patternMatched.substring(0, patternMatched.indexOf("("));
               String replaceIdentifier = "";
-              for (var _ in patternMatched.characters) {
+              for (var _ in startIdentifier.characters) {
                 replaceIdentifier += " ";
               }
               formatText =
