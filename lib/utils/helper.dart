@@ -114,7 +114,7 @@ class Helper {
               launchUrlString(formatText);
             };
           myStyle = myStyle!.copyWith(
-            color: Colors.blue,
+            color: linkHighlightColor,
           );
         }
         children.add(
