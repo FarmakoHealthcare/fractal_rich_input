@@ -49,6 +49,7 @@ class Helper {
     required TextStyle style,
     Color linkHighlightColor = Colors.blue,
     bool isLinkClickable = true,
+    void Function(String)? onLinkTap,
   }) {
     final List<InlineSpan> children = [];
     late String patternMatched;
@@ -111,7 +112,11 @@ class Helper {
         if (isLink && isLinkClickable) {
           recognizer = TapGestureRecognizer()
             ..onTap = () {
-              launchUrlString(formatText);
+              if (onLinkTap != null) {
+                onLinkTap(formatText);
+              } else {
+                launchUrlString(formatText);
+              }
             };
           myStyle = myStyle!.copyWith(
             color: linkHighlightColor,

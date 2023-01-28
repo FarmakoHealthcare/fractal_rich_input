@@ -27,12 +27,14 @@ class FractalRichInput {
     required TextStyle style,
     Color linkHighlightColor = Colors.blue,
     bool isLinkClickable = true,
+    void Function(String)? onLinkTap,
   }) {
     return Helper.buildTextSpan(
       text: text,
       style: style,
       linkHighlightColor: linkHighlightColor,
       isLinkClickable: isLinkClickable,
+      onLinkTap: onLinkTap,
     );
   }
 }
